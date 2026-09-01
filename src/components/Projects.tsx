@@ -1,4 +1,4 @@
-import { ArrowUpRight, FolderGit2 } from 'lucide-react'
+import { ArrowUpRight, ExternalLink, FolderGit2 } from 'lucide-react'
 import { featuredProjects, githubRepos, socials } from '../data/portfolio'
 import { ProjectCard } from './ProjectCard'
 import { Section } from './Section'
@@ -47,33 +47,55 @@ export function Projects() {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {githubRepos.map((repo, index) => (
-            <a
+            <div
               key={repo.url}
-              href={repo.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="reveal card-surface group p-5"
+              className="reveal card-surface group flex flex-col p-5"
               style={{ transitionDelay: `${index * 60}ms` }}
             >
               <div className="flex items-center justify-between">
                 <FolderGit2 className="h-5 w-5 text-violet-400" aria-hidden="true" />
-                <ArrowUpRight
-                  className="h-4 w-4 text-slate-600 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-violet-300"
-                  aria-hidden="true"
-                />
+                <a
+                  href={repo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${repo.name} on GitHub`}
+                  className="rounded-md p-1 text-slate-600 transition-all hover:bg-white/[0.06] hover:text-violet-300 focus-visible:outline-2 focus-visible:outline-violet-400"
+                >
+                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                </a>
               </div>
-              <p className="mt-4 font-mono text-sm font-semibold break-all text-white">{repo.name}</p>
+              <a
+                href={repo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 font-mono text-sm font-semibold break-all text-white transition-colors group-hover:text-violet-200"
+              >
+                {repo.name}
+              </a>
               <p className="mt-2 line-clamp-2 text-[13px] leading-relaxed text-slate-400">
                 {repo.description}
               </p>
-              <p className="mt-4 flex items-center gap-2 text-xs text-slate-500">
-                <span
-                  className={`h-2.5 w-2.5 rounded-full ${languageColors[repo.language] ?? 'bg-slate-400'}`}
-                  aria-hidden="true"
-                />
-                {repo.language}
-              </p>
-            </a>
+              <div className="mt-auto flex items-center justify-between gap-2 pt-4">
+                <p className="flex items-center gap-2 text-xs text-slate-500">
+                  <span
+                    className={`h-2.5 w-2.5 rounded-full ${languageColors[repo.language] ?? 'bg-slate-400'}`}
+                    aria-hidden="true"
+                  />
+                  {repo.language}
+                </p>
+                {repo.demo && (
+                  <a
+                    href={repo.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-medium text-electric transition-colors hover:text-sky-300"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                    Live demo
+                  </a>
+                )}
+              </div>
+            </div>
           ))}
         </div>
       </div>

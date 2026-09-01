@@ -10,7 +10,7 @@ export const personal = {
   email: 'yashfawaseem2006@gmail.com',
   location: 'Lahore, Pakistan',
   // Replace with your hosted resume URL if you prefer; the file ships in /public.
-  resumeUrl: '/Yashfa_Waseem_Resume.pdf',
+  resumeUrl: './Yashfa_Waseem_Resume.pdf',
 }
 
 export const socials = {
@@ -170,9 +170,10 @@ export type Repo = {
   description: string
   language: string
   url: string
+  demo?: string
 }
 
-/** Live repositories pulled from github.com/bint-e-waseem */
+/** Every public project repository from github.com/bint-e-waseem */
 export const githubRepos: Repo[] = [
   {
     name: 'pinecone-vector-db-tutorial',
@@ -181,16 +182,34 @@ export const githubRepos: Repo[] = [
     url: 'https://github.com/bint-e-waseem/pinecone-vector-db-tutorial',
   },
   {
+    name: 'LLM_image_model',
+    description: 'Prompt-to-image generator using Stable Diffusion XL via Hugging Face diffusers.',
+    language: 'Python',
+    url: 'https://github.com/bint-e-waseem/LLM_image_model',
+  },
+  {
+    name: 'LLM_short_model',
+    description: 'Qwen 2.5 1.5B Instruct — LLM inference and prompt-to-answer pipeline in Colab.',
+    language: 'Jupyter Notebook',
+    url: 'https://github.com/bint-e-waseem/LLM_short_model',
+  },
+  {
     name: 'Resume_analysis',
     description: 'AI-powered extraction of key skills and insights from resumes.',
     language: 'Jupyter Notebook',
     url: 'https://github.com/bint-e-waseem/Resume_analysis',
   },
   {
-    name: 'E-commerce-Performance-RFM',
-    description: 'RFM analysis of e-commerce performance on real transaction data.',
+    name: 'AI-Task-Manager',
+    description: 'OOP-based task management system for multiple AI agents and their assigned tasks.',
     language: 'Python',
-    url: 'https://github.com/bint-e-waseem/E-commerce-Performance-RFM',
+    url: 'https://github.com/bint-e-waseem/AI-Task-Manager',
+  },
+  {
+    name: 'Iris-classification-pipeline-KNN-',
+    description: 'Machine learning pipeline classifying Iris samples with KNN.',
+    language: 'Python',
+    url: 'https://github.com/bint-e-waseem/Iris-classification-pipeline-KNN-',
   },
   {
     name: 'Tech-Stack-Recommender',
@@ -199,16 +218,96 @@ export const githubRepos: Repo[] = [
     url: 'https://github.com/bint-e-waseem/Tech-Stack-Recommender',
   },
   {
-    name: 'bank-system',
-    description: 'A robust banking system simulation built with advanced C++ OOP concepts.',
-    language: 'C++',
-    url: 'https://github.com/bint-e-waseem/bank-system',
+    name: 'E-commerce-Performance-RFM',
+    description: 'RFM analysis of e-commerce performance on real transaction data.',
+    language: 'Python',
+    url: 'https://github.com/bint-e-waseem/E-commerce-Performance-RFM',
+  },
+  {
+    name: 'Dataset-1',
+    description: 'Foundational data processing project involving cleaning and manipulation.',
+    language: 'Jupyter Notebook',
+    url: 'https://github.com/bint-e-waseem/Dataset-1',
+  },
+  {
+    name: 'Dataset_2',
+    description: 'Exploratory data analysis on a real-world dataset to uncover trends.',
+    language: 'Jupyter Notebook',
+    url: 'https://github.com/bint-e-waseem/Dataset_2',
+  },
+  {
+    name: 'Dataset_3',
+    description: 'Exploratory data analysis on a real-world dataset to uncover trends.',
+    language: 'Jupyter Notebook',
+    url: 'https://github.com/bint-e-waseem/Dataset_3',
+  },
+  {
+    name: 'sql_queries',
+    description: 'Library management system in SQL — schema design, CRUD, JOINs, subqueries, views & indexes.',
+    language: 'SQL',
+    url: 'https://github.com/bint-e-waseem/sql_queries',
   },
   {
     name: 'Smart-Password-Generator',
     description: 'A secure and customizable password generator written in Python.',
     language: 'Python',
     url: 'https://github.com/bint-e-waseem/Smart-Password-Generator',
+  },
+  {
+    name: 'bank-system',
+    description: 'A robust banking system simulation built with advanced C++ OOP concepts.',
+    language: 'C++',
+    url: 'https://github.com/bint-e-waseem/bank-system',
+  },
+  {
+    name: 'oop',
+    description: 'Deep dives into C++ OOP — inheritance, polymorphism, pointers, and more.',
+    language: 'C++',
+    url: 'https://github.com/bint-e-waseem/oop',
+  },
+  {
+    name: 'cpp.basics',
+    description: 'Deep dives into C++ fundamentals and problem solving.',
+    language: 'C++',
+    url: 'https://github.com/bint-e-waseem/cpp.basics',
+  },
+  {
+    name: 'python-file-',
+    description: 'Python scripting and automation experiments.',
+    language: 'Python',
+    url: 'https://github.com/bint-e-waseem/python-file-',
+  },
+  {
+    name: 'PORTFOLIO',
+    description: 'An earlier version of my personal portfolio, built with TypeScript and deployed on Vercel.',
+    language: 'TypeScript',
+    url: 'https://github.com/bint-e-waseem/PORTFOLIO',
+    demo: 'https://portfolio-yashfa3.vercel.app',
+  },
+  {
+    name: 'Game',
+    description: 'Tic-Tac-Toe — an interactive web-based game.',
+    language: 'HTML',
+    url: 'https://github.com/bint-e-waseem/Game',
+  },
+  {
+    name: 'birthday',
+    description: 'A personal web project with a live GitHub Pages demo.',
+    language: 'HTML',
+    url: 'https://github.com/bint-e-waseem/birthday',
+    demo: 'https://bint-e-waseem.github.io/birthday/',
+  },
+  {
+    name: 'sales_tracker',
+    description: 'A sales tracking web project.',
+    language: 'HTML',
+    url: 'https://github.com/bint-e-waseem/sales_tracker',
+  },
+  {
+    name: 'practice_001',
+    description: 'Early HTML & CSS practice experiments.',
+    language: 'HTML',
+    url: 'https://github.com/bint-e-waseem/practice_001',
   },
 ]
 
